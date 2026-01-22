@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROKA STORE | Luxury Shopping Mall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-pale: #f4effa; /* الأرجواني الباهت */
+            --lavender-soft: #f0e6ff; /* اللافندر الفاتح جداً */
+            --accent-purple: #5e35b1;
+            --text-main: #2d3436;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-pale);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* Header & Brand */
+        header {
+            background: #fff;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--lavender-soft);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            color: var(--accent-purple);
+            letter-spacing: 4px;
+            margin: 5px 0;
+        }
+
+        /* Navigation Menu - Medium Size */
+        .nav-container {
+            background: var(--lavender-soft);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 8px;
+        }
+
+        .nav-item {
+            background: #fff;
+            color: var(--accent-purple);
+            padding: 6px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px; /* حجم متوسط */
+            font-weight: 600;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: var(--accent-purple);
+            color: #fff;
+        }
+
+        /* Section Styling */
+        .section-wrapper {
+            padding: 20px 5%;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--accent-purple);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Horizontal Scroll - East/West */
+        .scroll-row {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 10px 5px 20px 5px;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+
+        .scroll-row::-webkit-scrollbar { display: none; } /* Hide scrollbar for Chrome/Safari */
+
+        /* Medium Product Card */
+        .card {
+            min-width: 200px; /* حجم متوسط */
+            max-width: 200px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card-img {
+            width: 100%;
+            height: 260px; /* ارتفاع متوسط متناسق */
+            object-fit: cover;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .card-body {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .card-category {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #999;
+            letter-spacing: 1px;
+        }
+
+        .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin: 5px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-price {
+            color: var(--accent-purple);
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid var(--lavender-soft);
+        }
+
+        .social-links i {
+            font-size: 18px;
+            margin: 0 10px;
+            color: var(--accent-purple);
+            cursor: pointer;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .card { min-width: 160px; max-width: 160px; }
+            .card-img { height: 200px; }
+            .brand-logo { font-size: 20px; }
+            .nav-item { padding: 5px 10px; font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-logo">ROKA STORE</div>
+        <div class="nav-container">
+            <a href="#women" class="nav-item">Women's Wear</a>
+            <a href="#men" class="nav-item">Men's Style</a>
+            <a href="#kids" class="nav-item">Junior Collection</a>
+        </div>
+    </header>
+
+    <div class="section-wrapper">
+        
+        <div id="women">
+            <h2 class="section-title"><i class="fas fa-skating"></i> Luxury Dresses</h2>
+            <div class="scroll-row" id="row-dresses"></div>
+
+            <h2 class="section-title"><i class="fas fa-vest"></i> Modern Trousers & Suits</h2>
+            <div class="scroll-row" id="row-suits"></div>
+        </div>
+
+        <div id="men">
+            <h2 class="section-title"><i class="fas fa-user-tie"></i> Bespoke Formal</h2>
+            <div class="scroll-row" id="row-men-formal"></div>
+
+            <h2 class="section-title"><i class="fas fa-tshirt"></i> Premium Casual</h2>
+            <div class="scroll-row" id="row-men-casual"></div>
+        </div>
+
+        <div id="kids">
+            <h2 class="section-title"><i class="fas fa-baby-carriage"></i> Junior Boutique</h2>
+            <div class="scroll-row" id="row-kids"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+        <p style="font-size: 12px; margin-top: 15px;">&copy; 2024 ROKA STORE | 5th Avenue, NY | contact@roka-store.com</p>
+    </footer>
+
+    <script>
+        const categories = {
+            dresses: {
+                id: 'row-dresses', title: 'Royal Dress', price: '1200',
+                imgs: [
+                    'https://images.unsplash.com/photo-1595777457583-95e059d581b8', 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b',
+                    'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446', 'https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb',
+                    'https://images.unsplash.com/photo-1572804013307-f971ad9f715b', 'https://images.unsplash.com/photo-1550639525-c97d455acf70',
+                    'https://images.unsplash.com/photo-1496747611176-843222e1e57c', 'https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b',
+                    'https://images.unsplash.com/photo-1529139513477-42f4d9b4ce8a', 'https://images.unsplash.com/photo-1495385794356-15371f348c31'
+                ]
+            },
+            suits: {
+                id: 'row-suits', title: 'Silk Trouser', price: '450',
+                imgs: [
+                    'https://images.unsplash.com/photo-1548142813-c348350df52b', 'https://images.unsplash.com/photo-1581338834647-b0fb40704e21',
+                    'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc', 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3',
+                    'https://images.unsplash.com/photo-1591360236480-4ed08001739b', 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1',
+                    'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f', 'https://images.unsplash.com/photo-1509631179647-0177331693ae',
+                    'https://images.unsplash.com/photo-1581044777550-4cfa60707c03', 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633'
+                ]
+            },
+            mFormal: {
+                id: 'row-men-formal', title: 'Italian Suit', price: '2800',
+                imgs: [
+                    'https://images.unsplash.com/photo-1507679793933-479535cc373b', 'https://images.unsplash.com/photo-1593030761757-71fae45fa0e7',
+                    'https://images.unsplash.com/photo-1594932224828-b4b059b6f68d', 'https://images.unsplash.com/photo-1497339100210-9e87df79c218',
+                    'https://images.unsplash.com/photo-1555069519-03ef939c5ae2', 'https://images.unsplash.com/photo-1617137968427-85924c800a22',
+                    'https://images.unsplash.com/photo-1617127365659-c47fa864d8bc', 'https://images.unsplash.com/photo-1598808503744-4403b3068761',
+                    'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8', 'https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6'
+                ]
+            },
+            mCasual: {
+                id: 'row-men-casual', title: 'Urban Knit', price: '320',
+                imgs: [
+                    'https://images.unsplash.com/photo-1516257984877-a03a0152aa39', 'https://images.unsplash.com/photo-1614676471928-2ed0ad1023a8',
+                    'https://images.unsplash.com/photo-1520975954732-35dd22299614', 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d',
+                    'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce', 'https://images.unsplash.com/photo-1618886614638-80e3c103d31a',
+                    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e', 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7',
+                    'https://images.unsplash.com/photo-1504593811423-6dd665756598', 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea'
+                ]
+            },
+            kids: {
+                id: 'row-kids', title: 'Junior Elite', price: '180',
+                imgs: [
+                    'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea', 'https://images.unsplash.com/photo-1514090458221-65bb69af63e6',
+                    'https://images.unsplash.com/photo-1503919919749-642dd40f5d3d', 'https://images.unsplash.com/photo-1471286174890-9c112ffca5b4',
+                    'https://images.unsplash.com/photo-1621452137004-9721788733d4', 'https://images.unsplash.com/photo-1537633552985-df8429e8048b',
+                    'https://images.unsplash.com/photo-1444274831053-48065a827e1e', 'https://images.unsplash.com/photo-1519457431-758c445ec76d',
+                    'https://images.unsplash.com/photo-1505377059067-e285a7bac49b', 'https://images.unsplash.com/photo-1527633593645-e2799db47755'
+                ]
+            }
+        };
+
+        function renderMall() {
+            Object.values(categories).forEach(cat => {
+                const container = document.getElementById(cat.id);
+                cat.imgs.forEach((img, index) => {
+                    container.innerHTML += `
+                        <div class="card">
+                            <img src="${img}?auto=format&fit=crop&w=400&q=80" class="card-img" alt="Luxury Fashion">
+                            <div class="card-body">
+                                <div class="card-category">Luxury Collection</div>
+                                <h3 class="card-title">${cat.title} No. ${index + 1}</h3>
+                                <div class="card-price">$${cat.price}.00</div>
+                            </div>
+                        </div>
+                    `;
+                });
+            });
+        }
+
+        renderMall();
+    </script>
+</body>
+</html>
