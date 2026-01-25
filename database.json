@@ -1,0 +1,12 @@
+{
+  "inventory": [
+    { "id": "1", "name": "تيشيرت قطن", "category": "رجالي", "stock": 50, "price": 25, "sizes": ["M", "L", "XL"], "status": "In Stock" },
+    { "id": "2", "name": "فستان سهرة", "category": "نسائي", "stock": 10, "price": 120, "sizes": ["S", "M"], "status": "Low Stock" }
+  ],
+  "transactions": [
+    { "id": "T1", "date": "2026-01-25", "description": "بيع تيشيرت", "amount": 25, "type": "Income" }
+  ],
+  "employees": [
+    { "id": "E1", "name": "أحمد", "role": "بائع", "department": "المبيعات", "salary": 500 }
+  ]
+}
